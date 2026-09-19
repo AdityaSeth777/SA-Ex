@@ -24,7 +24,7 @@ export default async function PlaygroundPage({
         <SectionHeading
           eyebrow="Reference"
           title="Mermaid Starter Guide"
-          description="Only what you need for architecture diagrams — nothing more."
+          description="Only what you need for architecture diagrams - nothing more."
         />
         <div className="grid gap-4 sm:grid-cols-2">
           {mermaidExamples.map((example) => (

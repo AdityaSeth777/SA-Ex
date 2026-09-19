@@ -4,7 +4,7 @@ export const chatEvolution: EvolutionCaseStudy = {
   slug: "chat-application-evolution",
   title: "Chat Application",
   intro:
-    "The same feature — real-time messaging — needs a very different architecture depending on how many people are using it at once.",
+    "The same feature - real-time messaging - needs a very different architecture depending on how many people are using it at once.",
   versions: [
     {
       version: 1,

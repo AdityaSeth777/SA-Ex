@@ -6,7 +6,7 @@ export const rideBooking: CaseStudy = {
   title: "Ride Booking Application",
   tagline: "Match riders with nearby drivers and track trips live.",
   disclaimer:
-    "Simplified architecture inspired by typical ride-booking apps — not the exact internal design of any specific company.",
+    "Simplified architecture inspired by typical ride-booking apps - not the exact internal design of any specific company.",
   scenario:
     "Riders request a trip, the system finds a nearby available driver, and both sides track the trip's progress until it's complete.",
   requirements: [
@@ -23,7 +23,7 @@ export const rideBooking: CaseStudy = {
     { name: "Load Balancer", description: "Spreads rider and driver traffic across backend servers.", glossaryKey: "loadBalancer" },
     { name: "Backend Servers", description: "Handle ride requests, matching logic, and trip status updates.", glossaryKey: "backend" },
     { name: "Authentication", description: "Confirms whether someone is a verified rider or driver before letting them request or accept trips.", glossaryKey: "auth" },
-    { name: "Live Location Cache", description: "Holds each driver's current GPS position, which updates every few seconds — too frequently to write straight to the main database.", glossaryKey: "cache" },
+    { name: "Live Location Cache", description: "Holds each driver's current GPS position, which updates every few seconds - too frequently to write straight to the main database.", glossaryKey: "cache" },
     { name: "Message Queue", description: "Buffers trip events (started, completed, payment) so they're reliably recorded without slowing down the live matching flow.", glossaryKey: "messageQueue" },
     { name: "Database", description: "Stores completed trip history, ratings, and payment records.", glossaryKey: "database" },
   ],
@@ -35,7 +35,7 @@ export const rideBooking: CaseStudy = {
     { step: 5, title: "Trip ends and is recorded", description: "A trip-completed event is queued and then written to the database, along with the payment record." },
   ],
   thinkAboutIt: [
-    { question: "Why keep live driver locations in a cache instead of the main database?", hint: "Position updates happen every few seconds per driver — across a whole city that's an enormous number of tiny, frequent writes, which a fast cache handles far better than a durable database." },
+    { question: "Why keep live driver locations in a cache instead of the main database?", hint: "Position updates happen every few seconds per driver - across a whole city that's an enormous number of tiny, frequent writes, which a fast cache handles far better than a durable database." },
     { question: "What happens during rush hour when ride requests spike in one part of a city?", hint: "More backend servers help handle request volume, but the matching logic itself also needs to search efficiently among many nearby drivers at once." },
     { question: "Why use a queue for trip-completed events instead of writing directly to the database?", hint: "It decouples the fast-moving live-trip experience from the database write, so a slow write never delays the rider or driver's app." },
   ],

@@ -6,7 +6,7 @@ export const youtubeVideoScale: CaseStudy = {
   title: "YouTube-like Video Platform",
   tagline: "Millions of uploads, billions of views, worldwide.",
   disclaimer:
-    "Simplified architecture inspired by a YouTube-like system — not a reproduction of any company's actual production architecture.",
+    "Simplified architecture inspired by a YouTube-like system - not a reproduction of any company's actual production architecture.",
   scenario:
     "The video platform from before now needs to handle huge upload volume, process videos into multiple qualities, and stream to viewers worldwide with minimal delay.",
   requirements: [
@@ -38,13 +38,13 @@ export const youtubeVideoScale: CaseStudy = {
     { step: 5, title: "Viewers watch worldwide", description: "Each viewer streams from a nearby CDN location, and picks up recommendations from the search/recommendation service." },
   ],
   thinkAboutIt: [
-    { question: "Why is uploading and processing split into separate stages instead of doing everything as soon as the file arrives?", hint: "Processing (transcoding) a large video can take much longer than the upload itself — queuing it lets the creator finish uploading quickly while processing happens in the background." },
-    { question: "Why store raw and processed video separately?", hint: "The raw file might be reprocessed later (new quality formats), while processed files are what's actually served — keeping them separate keeps each system focused." },
-    { question: "What would happen without a CDN at this scale?", hint: "Every single view, of every video, from every country, would hit the origin storage directly — that traffic volume would overwhelm almost any central system." },
+    { question: "Why is uploading and processing split into separate stages instead of doing everything as soon as the file arrives?", hint: "Processing (transcoding) a large video can take much longer than the upload itself - queuing it lets the creator finish uploading quickly while processing happens in the background." },
+    { question: "Why store raw and processed video separately?", hint: "The raw file might be reprocessed later (new quality formats), while processed files are what's actually served - keeping them separate keeps each system focused." },
+    { question: "What would happen without a CDN at this scale?", hint: "Every single view, of every video, from every country, would hit the origin storage directly - that traffic volume would overwhelm almost any central system." },
   ],
   whatIf: [
-    { question: "What happens if users upload huge files?", affectedComponent: "Raw Video Storage / Processing Queue", consequence: "Larger files take longer to upload and transcode — the queue keeps the system stable by processing jobs as capacity allows, rather than failing under sudden load." },
-    { question: "What happens if the same piece of data is requested millions of times?", affectedComponent: "CDN", consequence: "A viral video is exactly the CDN's job — it gets cached widely so massive view counts don't repeatedly hit processed storage or the metadata database." },
+    { question: "What happens if users upload huge files?", affectedComponent: "Raw Video Storage / Processing Queue", consequence: "Larger files take longer to upload and transcode - the queue keeps the system stable by processing jobs as capacity allows, rather than failing under sudden load." },
+    { question: "What happens if the same piece of data is requested millions of times?", affectedComponent: "CDN", consequence: "A viral video is exactly the CDN's job - it gets cached widely so massive view counts don't repeatedly hit processed storage or the metadata database." },
   ],
   sourcePath: "content/03-scale/youtube-video-scale.ts",
 };

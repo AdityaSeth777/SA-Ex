@@ -6,9 +6,9 @@ export const ecommerce: CaseStudy = {
   title: "E-commerce Platform",
   tagline: "Browse products, check out, and handle many shoppers at once.",
   disclaimer:
-    "Simplified architecture inspired by typical e-commerce platforms — not the exact internal design of any specific company.",
+    "Simplified architecture inspired by typical e-commerce platforms - not the exact internal design of any specific company.",
   scenario:
-    "An online store needs to handle many shoppers browsing products, adding to cart, and checking out at the same time — including during sales when traffic spikes heavily.",
+    "An online store needs to handle many shoppers browsing products, adding to cart, and checking out at the same time - including during sales when traffic spikes heavily.",
   requirements: [
     "Browse and search products",
     "Add items to a cart and check out",
@@ -38,11 +38,11 @@ export const ecommerce: CaseStudy = {
   thinkAboutIt: [
     { question: "What happens during a flash sale when traffic suddenly spikes 10x?", hint: "More backend servers behind the load balancer help, but a hot product's inventory count in the database still needs careful, safe updates so it doesn't oversell." },
     { question: "Why put a cache in front of the database instead of just adding more database servers?", hint: "A cache serves repeated reads far faster and cheaper than even a well-tuned database, especially for data that doesn't change every second." },
-    { question: "Why store product images separately from the database?", hint: "Databases are optimized for structured, searchable records — not for storing and streaming large binary files efficiently." },
+    { question: "Why store product images separately from the database?", hint: "Databases are optimized for structured, searchable records - not for storing and streaming large binary files efficiently." },
   ],
   whatIf: [
-    { question: "What happens if one backend server fails?", affectedComponent: "Backend Servers", consequence: "The load balancer detects the failure and stops sending it traffic — shoppers keep shopping through the remaining servers, just with slightly less capacity." },
-    { question: "What happens if the cache goes down?", affectedComponent: "Cache", consequence: "Every request falls back to the database directly — the site still works, but noticeably slower, and the database takes on much more load." },
+    { question: "What happens if one backend server fails?", affectedComponent: "Backend Servers", consequence: "The load balancer detects the failure and stops sending it traffic - shoppers keep shopping through the remaining servers, just with slightly less capacity." },
+    { question: "What happens if the cache goes down?", affectedComponent: "Cache", consequence: "Every request falls back to the database directly - the site still works, but noticeably slower, and the database takes on much more load." },
   ],
   sourcePath: "content/02-intermediate/ecommerce.ts",
 };

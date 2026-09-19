@@ -112,7 +112,7 @@ export default async function ChallengePage({
               <p className="mb-4 text-sm italic text-muted-foreground">
                 Software architecture often has multiple valid designs. The
                 goal is to justify your design and understand its
-                trade-offs — this is one reasonable answer, not the only one.
+                trade-offs - this is one reasonable answer, not the only one.
               </p>
 
               <MermaidDiagram code={challenge.reference.mermaid} />

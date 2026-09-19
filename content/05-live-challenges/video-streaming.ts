@@ -39,7 +39,7 @@ export const videoStreamingChallenge: LiveChallenge = {
       "The CDN exists because serving every viewer worldwide from one central storage location would be slow and would overload that location.",
     ],
     alternatives: [
-      "A more advanced design would add a processing queue and transcoding workers to prepare multiple video qualities — appropriate once viewers have varying connection speeds (see the scale-level case study).",
+      "A more advanced design would add a processing queue and transcoding workers to prepare multiple video qualities - appropriate once viewers have varying connection speeds (see the scale-level case study).",
     ],
   },
   sourcePath: "content/05-live-challenges/video-streaming.ts",

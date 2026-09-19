@@ -44,11 +44,11 @@ export const libraryManagement: CaseStudy = {
   ],
   thinkAboutIt: [
     { question: "What happens if two students try to borrow the last copy of the same book at the exact same moment?", hint: "The backend needs to check-and-update availability as one safe step, not two separate steps, or both requests might succeed." },
-    { question: "Should the search feature and the borrow feature use the same backend logic, or could they be separated?", hint: "For a system this small, one backend handling both is simplest — separation becomes useful only once each part needs to scale independently." },
+    { question: "Should the search feature and the borrow feature use the same backend logic, or could they be separated?", hint: "For a system this small, one backend handling both is simplest - separation becomes useful only once each part needs to scale independently." },
     { question: "What data would you need to store for each book, and for each student?", hint: "Think about what's needed to search (title, author) versus what's needed to track borrowing (status, due date, borrower)." },
   ],
   whatIf: [
-    { question: "What happens if the database goes down?", affectedComponent: "Database", consequence: "No searches, borrows, or returns can be processed — the backend has nowhere to read or write book records, so the whole system becomes unusable until it's back." },
+    { question: "What happens if the database goes down?", affectedComponent: "Database", consequence: "No searches, borrows, or returns can be processed - the backend has nowhere to read or write book records, so the whole system becomes unusable until it's back." },
   ],
   sourcePath: "content/01-basics/library-management.ts",
 };

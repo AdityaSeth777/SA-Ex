@@ -102,7 +102,7 @@ export default async function CaseStudyPage({
           Think About It
         </h2>
         <p className="mb-3 text-sm text-muted-foreground">
-          Consider these before class — there&apos;s no submission here, just
+          Consider these before class - there&apos;s no submission here, just
           questions worth having an opinion on.
         </p>
         <ThinkAboutIt items={study.thinkAboutIt} />

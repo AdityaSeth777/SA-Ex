@@ -5,7 +5,7 @@ export const designYourOwnChallenge: LiveChallenge = {
   title: "Design Your Own System",
   expectedLearning: "Open-ended architecture design and justification",
   scenario:
-    "Pick one system below and design an architecture for it from scratch, using the Architecture Playground. There is no single hidden 'right answer' here — be ready to explain and justify your choices.",
+    "Pick one system below and design an architecture for it from scratch, using the Architecture Playground. There is no single hidden 'right answer' here - be ready to explain and justify your choices.",
   requirements: [
     "Choose one system: Instagram-like application, Food delivery, Online gaming, Cloud storage, or College management system",
     "Identify the core user-facing features first",
@@ -13,7 +13,7 @@ export const designYourOwnChallenge: LiveChallenge = {
     "Be ready to explain what would break first as usage grows",
   ],
   constraints: [
-    "Keep your diagram to a reasonable number of components — focus on justifying each one",
+    "Keep your diagram to a reasonable number of components - focus on justifying each one",
   ],
   questions: [
     "What are the 3-4 core features your system absolutely must support?",

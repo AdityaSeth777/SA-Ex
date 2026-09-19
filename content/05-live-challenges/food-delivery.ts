@@ -40,7 +40,7 @@ export const foodDeliveryChallenge: LiveChallenge = {
       "A single shared database for orders keeps all three sides (customer, restaurant, rider) looking at one consistent source of truth for status.",
     ],
     alternatives: [
-      "At small scale, a single backend handling orders, notifications, and matching together is perfectly reasonable — splitting into separate services becomes worthwhile mainly at higher scale (see the 1M-scale version of this problem).",
+      "At small scale, a single backend handling orders, notifications, and matching together is perfectly reasonable - splitting into separate services becomes worthwhile mainly at higher scale (see the 1M-scale version of this problem).",
     ],
   },
   sourcePath: "content/05-live-challenges/food-delivery.ts",

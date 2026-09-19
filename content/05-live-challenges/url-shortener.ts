@@ -32,11 +32,11 @@ export const urlShortenerChallenge: LiveChallenge = {
       { step: 2, title: "Visit", description: "Backend looks up the code in the database and redirects the browser to the original URL." },
     ],
     whyEachExists: [
-      "This is the minimal architecture that satisfies the requirements — nothing here is optional at small scale.",
+      "This is the minimal architecture that satisfies the requirements - nothing here is optional at small scale.",
       "The redirect path (read) and the creation path (write) share the same backend and database in this simple version, since traffic doesn't yet justify separating them.",
     ],
     alternatives: [
-      "A cache in front of the database is a natural next step once popular links are visited very frequently — see the case study version of this problem for that discussion.",
+      "A cache in front of the database is a natural next step once popular links are visited very frequently - see the case study version of this problem for that discussion.",
     ],
   },
   sourcePath: "content/05-live-challenges/url-shortener.ts",

@@ -108,7 +108,7 @@ export function MermaidPlaygroundEditor({
             <MermaidDiagram code={rendered} zoomable={false} className="h-full" />
           ) : (
             <div className="flex h-full items-center justify-center p-4 text-center text-sm text-muted-foreground">
-              Nothing to render yet — write some Mermaid on the left.
+              Nothing to render yet - write some Mermaid on the left.
             </div>
           )}
         </div>

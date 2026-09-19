@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-border">
       <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-muted-foreground sm:px-6">
         <p>
-          Software Architecture Foundations — a study companion, not an LMS.
+          Software Architecture Foundations - a study companion, not an LMS.
           Content lives in the{" "}
           <a
             href={githubRepoUrl()}

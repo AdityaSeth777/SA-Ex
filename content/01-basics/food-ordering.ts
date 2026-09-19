@@ -46,7 +46,7 @@ export const foodOrdering: CaseStudy = {
   thinkAboutIt: [
     { question: "What happens if 1,000 users access the system simultaneously?", hint: "During a lunch rush, many customers browsing and ordering at once puts sustained load on both the backend and the database." },
     { question: "Which component could become a bottleneck?", hint: "If the menu is re-fetched from the database on every single page view, that read pattern repeats unnecessarily often." },
-    { question: "Could we have more than one backend server?", hint: "Yes — order placement doesn't depend on which server handled the previous request, so multiple backend copies can share the load." },
+    { question: "Could we have more than one backend server?", hint: "Yes - order placement doesn't depend on which server handled the previous request, so multiple backend copies can share the load." },
     { question: "Where could caching help?", hint: "The menu rarely changes minute-to-minute, so it's a good candidate to keep in a fast cache instead of querying the database every time." },
   ],
   sourcePath: "content/01-basics/food-ordering.ts",

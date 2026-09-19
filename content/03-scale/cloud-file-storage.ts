@@ -6,9 +6,9 @@ export const cloudFileStorage: CaseStudy = {
   title: "Cloud File Storage",
   tagline: "Store, sync, and share files reliably across devices.",
   disclaimer:
-    "Simplified architecture inspired by cloud file storage services — not a reproduction of any company's actual production architecture.",
+    "Simplified architecture inspired by cloud file storage services - not a reproduction of any company's actual production architecture.",
   scenario:
-    "Users upload files from multiple devices, expect them to sync automatically, and want to share files or folders with others — all while files must never be lost.",
+    "Users upload files from multiple devices, expect them to sync automatically, and want to share files or folders with others - all while files must never be lost.",
   requirements: [
     "Upload and download files from any device",
     "Sync changes across a user's devices automatically",
@@ -38,7 +38,7 @@ export const cloudFileStorage: CaseStudy = {
   ],
   thinkAboutIt: [
     { question: "Why split files into chunks instead of storing each file as one single unit?", hint: "Chunking makes large files easier to upload reliably (resuming a failed chunk instead of the whole file) and lets unchanged parts of a file skip re-uploading entirely." },
-    { question: "Why replicate storage across multiple machines?", hint: "If a file exists on only one disk and that disk fails, the file is gone forever — multiple copies protect against exactly that." },
+    { question: "Why replicate storage across multiple machines?", hint: "If a file exists on only one disk and that disk fails, the file is gone forever - multiple copies protect against exactly that." },
     { question: "How would sharing a file with another user work in this architecture?", hint: "The metadata database would need a permissions record linking that file/folder to the other user, checked by authentication whenever they try to access it." },
   ],
   whatIf: [

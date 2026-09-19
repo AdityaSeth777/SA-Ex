@@ -6,7 +6,7 @@ export const videoStreaming: CaseStudy = {
   title: "Video Streaming Platform",
   tagline: "Upload, store, and stream videos to many viewers.",
   disclaimer:
-    "Simplified architecture inspired by typical video platforms — not the exact internal design of any specific company.",
+    "Simplified architecture inspired by typical video platforms - not the exact internal design of any specific company.",
   scenario:
     "Creators upload videos, and viewers stream them. The system needs to store large video files and deliver them smoothly to many viewers at once.",
   requirements: [
@@ -23,7 +23,7 @@ export const videoStreaming: CaseStudy = {
     { name: "Backend Servers", description: "Handle uploads, video metadata (titles, descriptions), and coordinate where files get stored.", glossaryKey: "backend" },
     { name: "Object Storage", description: "Stores the actual video files, which can be gigabytes in size each.", glossaryKey: "objectStorage" },
     { name: "CDN", description: "Caches and delivers video content from locations near each viewer, so streaming doesn't depend on distance to one central server.", glossaryKey: "cdn" },
-    { name: "Database", description: "Stores video metadata — titles, descriptions, view counts, and which storage file each video maps to.", glossaryKey: "database" },
+    { name: "Database", description: "Stores video metadata - titles, descriptions, view counts, and which storage file each video maps to.", glossaryKey: "database" },
   ],
   flow: [
     { step: 1, title: "Creator uploads a video", description: "The file goes through a backend server into object storage; metadata is saved to the database." },
@@ -38,8 +38,8 @@ export const videoStreaming: CaseStudy = {
     { question: "Where could caching help beyond the CDN?", hint: "Frequently viewed metadata (titles, view counts) could also benefit from a cache in front of the database." },
   ],
   whatIf: [
-    { question: "What happens if users upload huge files?", affectedComponent: "Object Storage", consequence: "Large uploads take longer and use more bandwidth and storage space — systems often process (compress/transcode) videos after upload rather than making viewers wait for the raw file." },
-    { question: "What happens if the same piece of data is requested millions of times?", affectedComponent: "CDN", consequence: "This is exactly the case a CDN is built for — a popular video gets cached at edge locations so millions of views don't all hit the origin storage." },
+    { question: "What happens if users upload huge files?", affectedComponent: "Object Storage", consequence: "Large uploads take longer and use more bandwidth and storage space - systems often process (compress/transcode) videos after upload rather than making viewers wait for the raw file." },
+    { question: "What happens if the same piece of data is requested millions of times?", affectedComponent: "CDN", consequence: "This is exactly the case a CDN is built for - a popular video gets cached at edge locations so millions of views don't all hit the origin storage." },
   ],
   sourcePath: "content/02-intermediate/video-streaming.ts",
 };

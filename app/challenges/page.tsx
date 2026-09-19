@@ -9,7 +9,7 @@ export default function ChallengesPage() {
       <SectionHeading
         eyebrow="Module 4"
         title="Live Architecture Challenges"
-        description="Not an assignment — a collection of problems for an instructor to open in class and ask: how would you design this system?"
+        description="Not an assignment - a collection of problems for an instructor to open in class and ask: how would you design this system?"
       />
       <div className="grid gap-4 sm:grid-cols-2">
         {liveChallenges.map((challenge, i) => (

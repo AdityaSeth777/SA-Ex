@@ -40,7 +40,7 @@ export const libraryManagementChallenge: LiveChallenge = {
     ],
     alternatives: [
       "A design with a cache for popular book searches would also be reasonable if search volume were much higher.",
-      "Some designs might separate 'catalog' and 'circulation' (borrowing) into different backend services — valid, but likely unnecessary at this scale.",
+      "Some designs might separate 'catalog' and 'circulation' (borrowing) into different backend services - valid, but likely unnecessary at this scale.",
     ],
   },
   sourcePath: "content/05-live-challenges/library-management.ts",

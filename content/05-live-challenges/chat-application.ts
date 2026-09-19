@@ -37,7 +37,7 @@ export const chatApplicationChallenge: LiveChallenge = {
       "Saving every message to the database (not just delivering it live) is what makes message history and offline delivery possible.",
     ],
     alternatives: [
-      "At larger scale, a message queue between the server and database (see the 1M-user version of this challenge) becomes important — but for a moderate user base, writing directly to the database is a reasonable simplification.",
+      "At larger scale, a message queue between the server and database (see the 1M-user version of this challenge) becomes important - but for a moderate user base, writing directly to the database is a reasonable simplification.",
     ],
   },
   sourcePath: "content/05-live-challenges/chat-application.ts",

@@ -5,13 +5,13 @@ export const mermaidExamples: MermaidExample[] = [
     title: "A basic box",
     code: "flowchart LR\n  A[Frontend]",
     explanation:
-      "Square brackets [ ] draw a simple box. The text inside is just a label — give it a short, clear name.",
+      "Square brackets [ ] draw a simple box. The text inside is just a label - give it a short, clear name.",
   },
   {
     title: "A database shape",
     code: "flowchart LR\n  DB[(Database)]",
     explanation:
-      "Wrapping the label in [( )] draws a cylinder — the standard shape for a database in architecture diagrams.",
+      "Wrapping the label in [( )] draws a cylinder - the standard shape for a database in architecture diagrams.",
   },
   {
     title: "A simple arrow",
@@ -35,6 +35,6 @@ export const mermaidExamples: MermaidExample[] = [
     title: "Grouping with a subgraph",
     code: "flowchart LR\n  User --> LB[Load Balancer]\n  subgraph Servers\n    S1[Server 1]\n    S2[Server 2]\n  end\n  LB --> S1\n  LB --> S2\n  S1 --> DB[(Database)]\n  S2 --> DB",
     explanation:
-      "subgraph Name ... end visually groups related boxes together — useful for showing 'these are all backend servers.'",
+      "subgraph Name ... end visually groups related boxes together - useful for showing 'these are all backend servers.'",
   },
 ];

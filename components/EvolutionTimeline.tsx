@@ -11,7 +11,7 @@ export function EvolutionTimeline({ study }: { study: EvolutionCaseStudy }) {
             <span className="text-xs font-semibold uppercase tracking-wider text-accent">
               {v.label}
             </span>
-            <span className="text-sm text-muted-foreground">— {v.scale}</span>
+            <span className="text-sm text-muted-foreground">- {v.scale}</span>
           </div>
 
           <MermaidDiagram code={v.mermaid} />

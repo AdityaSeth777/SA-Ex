@@ -5,11 +5,11 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     key: "client",
     name: "Client",
     whatIsIt:
-      "The device or app the user is directly using — a browser, a phone app, or a desktop app.",
+      "The device or app the user is directly using - a browser, a phone app, or a desktop app.",
     whyNeeded:
       "Every system needs a starting point where a real person interacts with it.",
     example:
-      "Like a customer walking up to a restaurant counter — they're the one making the request.",
+      "Like a customer walking up to a restaurant counter - they're the one making the request.",
     diagram: "flowchart LR\n  Client --> System[Rest of the System]",
     highlightLabel: "Client",
   },
@@ -17,11 +17,11 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     key: "frontend",
     name: "Frontend",
     whatIsIt:
-      "The visual interface the user sees and interacts with — buttons, forms, pages.",
+      "The visual interface the user sees and interacts with - buttons, forms, pages.",
     whyNeeded:
       "Someone needs to translate what the user does (clicks, typing) into requests the system understands.",
     example:
-      "Like the menu and counter display at a restaurant — it's how you place your order, not the kitchen itself.",
+      "Like the menu and counter display at a restaurant - it's how you place your order, not the kitchen itself.",
     diagram: "flowchart LR\n  User --> Frontend --> Backend",
     highlightLabel: "Frontend",
   },
@@ -33,7 +33,7 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     whyNeeded:
       "Raw data and rules need somewhere to live that isn't directly exposed to (or trusted from) the user's device.",
     example:
-      "Like the kitchen at a restaurant — it takes the order and actually prepares it, following recipes and rules.",
+      "Like the kitchen at a restaurant - it takes the order and actually prepares it, following recipes and rules.",
     diagram: "flowchart LR\n  Frontend --> Backend --> Database",
     highlightLabel: "Backend",
   },
@@ -45,7 +45,7 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     whyNeeded:
       "It gives frontend and backend a shared contract, so either side can change internally without breaking the other.",
     example:
-      "Like a restaurant order slip format — the waiter always writes orders the same way, so the kitchen always knows how to read them.",
+      "Like a restaurant order slip format - the waiter always writes orders the same way, so the kitchen always knows how to read them.",
     diagram: "flowchart LR\n  Frontend -->|API request| Backend",
     highlightLabel: "API",
   },
@@ -53,11 +53,11 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     key: "database",
     name: "Database",
     whatIsIt:
-      "Where the system permanently stores and organizes data — users, orders, messages, and more.",
+      "Where the system permanently stores and organizes data - users, orders, messages, and more.",
     whyNeeded:
       "Data needs to survive after a request finishes, and be reliably searchable and updatable later.",
     example:
-      "Like a restaurant's filing cabinet of customer orders and inventory — nothing is remembered if it isn't written down somewhere.",
+      "Like a restaurant's filing cabinet of customer orders and inventory - nothing is remembered if it isn't written down somewhere.",
     diagram: "flowchart LR\n  Backend --> Database[(Database)]",
     highlightLabel: "Database",
   },
@@ -94,7 +94,7 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     whyNeeded:
       "Some tasks (sending emails, processing videos) take too long to do immediately while the user waits for a response.",
     example:
-      "Like a restaurant kitchen's order tickets on a spike — the waiter drops off the ticket and moves on, and a cook processes it in order.",
+      "Like a restaurant kitchen's order tickets on a spike - the waiter drops off the ticket and moves on, and a cook processes it in order.",
     diagram:
       "flowchart LR\n  Backend --> Queue[Message Queue]\n  Queue --> Worker",
     highlightLabel: "Message Queue",
@@ -103,7 +103,7 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     key: "objectStorage",
     name: "Object Storage",
     whatIsIt:
-      "A storage system built specifically for large files — images, videos, documents — rather than structured rows of data.",
+      "A storage system built specifically for large files - images, videos, documents - rather than structured rows of data.",
     whyNeeded:
       "Databases are optimized for small structured records, not gigabyte-sized video files; object storage is built for exactly that.",
     example:
@@ -129,7 +129,7 @@ export const componentGlossary: ComponentGlossaryEntry[] = [
     whatIsIt:
       "The part of the system that checks who a user is (login) and what they're allowed to do.",
     whyNeeded:
-      "Systems need to know who is making a request before deciding whether to allow it — protecting data and personalizing access.",
+      "Systems need to know who is making a request before deciding whether to allow it - protecting data and personalizing access.",
     example:
       "Like a restaurant checking a reservation or membership card before letting you into a private dining room.",
     diagram: "flowchart LR\n  Client --> Auth[Authentication] --> Backend",

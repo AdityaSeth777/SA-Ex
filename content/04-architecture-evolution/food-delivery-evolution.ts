@@ -12,7 +12,7 @@ export const foodDeliveryEvolution: EvolutionCaseStudy = {
       scale: "One Restaurant, ~50 Orders a Day",
       mermaid: "flowchart LR\n  Customer --> Server\n  Server --> Database[(Database)]",
       explanation:
-        "One backend server takes orders and stores them; the restaurant checks the same database to see new orders. No matching or dispatch logic is needed yet — there's only one restaurant.",
+        "One backend server takes orders and stores them; the restaurant checks the same database to see new orders. No matching or dispatch logic is needed yet - there's only one restaurant.",
     },
     {
       version: 2,

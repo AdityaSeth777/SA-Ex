@@ -45,11 +45,11 @@ export const onlineExamination: CaseStudy = {
   ],
   thinkAboutIt: [
     { question: "What should happen if a student's internet disconnects right before they submit?", hint: "Consider whether the frontend should auto-save answers periodically, so a disconnect doesn't lose everything." },
-    { question: "How would the system stop a student from submitting after time is up?", hint: "Relying only on the frontend's timer is risky — the backend should also check the actual submission time against the exam's end time." },
-    { question: "What happens if 500 students all start the exam at the exact same time?", hint: "Every one of those logins and question-loads hits the backend and database at once — this is where a single backend server could become a bottleneck." },
+    { question: "How would the system stop a student from submitting after time is up?", hint: "Relying only on the frontend's timer is risky - the backend should also check the actual submission time against the exam's end time." },
+    { question: "What happens if 500 students all start the exam at the exact same time?", hint: "Every one of those logins and question-loads hits the backend and database at once - this is where a single backend server could become a bottleneck." },
   ],
   whatIf: [
-    { question: "What happens if one backend server fails during the exam?", affectedComponent: "Backend", consequence: "Every student connected to that server loses the ability to load questions or submit answers — with only one server, there's no backup to take over." },
+    { question: "What happens if one backend server fails during the exam?", affectedComponent: "Backend", consequence: "Every student connected to that server loses the ability to load questions or submit answers - with only one server, there's no backup to take over." },
   ],
   sourcePath: "content/01-basics/online-examination.ts",
 };

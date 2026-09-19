@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -31,7 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-background text-foreground font-sans">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <ViewTransition
+              enter="page-fade-in"
+              exit="page-fade-out"
+              default="none"
+            >
+              {children}
+            </ViewTransition>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

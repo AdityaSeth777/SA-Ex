@@ -39,16 +39,16 @@ export function getCaseStudiesByLevel(level: CaseStudy["level"]) {
 
 export const levelInfo = {
   basic: {
-    title: "Level 1 — Basic",
+    title: "Level 1 - Basic",
     description: "Client → Server → Database. The foundation every architecture builds on.",
   },
   intermediate: {
-    title: "Level 2 — Intermediate",
+    title: "Level 2 - Intermediate",
     description:
       "Load balancers, caching, CDNs, authentication, and message queues enter the picture.",
   },
   scale: {
-    title: "Level 3 — Scale",
+    title: "Level 3 - Scale",
     description:
       "The same problems, at a scale where reliability and performance force new decisions.",
   },

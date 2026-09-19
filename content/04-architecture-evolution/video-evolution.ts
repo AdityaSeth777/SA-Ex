@@ -4,7 +4,7 @@ export const videoEvolution: EvolutionCaseStudy = {
   slug: "video-platform-evolution",
   title: "Video Streaming Platform",
   intro:
-    "A video platform's architecture changes dramatically as the audience — and the size of the video files being served — grows.",
+    "A video platform's architecture changes dramatically as the audience - and the size of the video files being served - grows.",
   versions: [
     {
       version: 1,
@@ -13,7 +13,7 @@ export const videoEvolution: EvolutionCaseStudy = {
       mermaid:
         "flowchart LR\n  Viewer --> Server\n  Server --> Storage[(Storage)]",
       explanation:
-        "A single server can store video files directly and serve them straight to viewers. At low traffic, there's no real difference yet between 'storage' and 'the database' — one server does it all.",
+        "A single server can store video files directly and serve them straight to viewers. At low traffic, there's no real difference yet between 'storage' and 'the database' - one server does it all.",
     },
     {
       version: 2,
@@ -32,7 +32,7 @@ export const videoEvolution: EvolutionCaseStudy = {
       mermaid:
         "flowchart LR\n  Viewer --> CDN\n  CDN --> Storage[(Object Storage)]\n  Viewer --> LB[Load Balancer]\n  LB --> S1[Server 1]\n  LB --> S2[Server 2]\n  S1 --> DB[(Metadata Database)]\n  S2 --> DB\n  S1 --> Queue[Processing Queue]\n  Queue --> Workers[Transcoding Workers]\n  Workers --> Storage",
       explanation:
-        "Serving video directly from one storage location to viewers worldwide is now far too slow — a CDN caches video near each viewer instead. Uploads are queued for background processing (transcoding into multiple qualities) rather than handled instantly, so upload servers stay responsive.",
+        "Serving video directly from one storage location to viewers worldwide is now far too slow - a CDN caches video near each viewer instead. Uploads are queued for background processing (transcoding into multiple qualities) rather than handled instantly, so upload servers stay responsive.",
       newComponents: ["CDN", "Processing Queue", "Transcoding Workers"],
     },
   ],

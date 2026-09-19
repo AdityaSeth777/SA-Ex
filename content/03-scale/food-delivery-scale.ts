@@ -6,9 +6,9 @@ export const foodDeliveryScale: CaseStudy = {
   title: "Large-scale Food Delivery Platform",
   tagline: "Thousands of restaurants, riders, and orders, live, city-wide.",
   disclaimer:
-    "Simplified architecture inspired by large food delivery platforms — not a reproduction of any company's actual production architecture.",
+    "Simplified architecture inspired by large food delivery platforms - not a reproduction of any company's actual production architecture.",
   scenario:
-    "The food ordering system from before now needs to coordinate three sides at once — customers, thousands of restaurants, and a large fleet of delivery riders — in real time, across many cities.",
+    "The food ordering system from before now needs to coordinate three sides at once - customers, thousands of restaurants, and a large fleet of delivery riders - in real time, across many cities.",
   requirements: [
     "Customers browse restaurants and place orders",
     "Restaurants receive and confirm orders instantly",
@@ -36,9 +36,9 @@ export const foodDeliveryScale: CaseStudy = {
     { step: 5, title: "Order is delivered and recorded", description: "Once delivered, the full order/delivery record is saved to the orders database." },
   ],
   thinkAboutIt: [
-    { question: "Why separate order servers from dispatch servers instead of one backend doing everything?", hint: "Order placement and rider matching have very different load patterns and urgency — separating them lets each scale and be tuned independently." },
+    { question: "Why separate order servers from dispatch servers instead of one backend doing everything?", hint: "Order placement and rider matching have very different load patterns and urgency - separating them lets each scale and be tuned independently." },
     { question: "What happens during a dinner rush when order volume spikes heavily in one city?", hint: "The order queue smooths out the burst for dispatch, but if riders are genuinely scarce in that area, no architecture change fixes a real-world shortage of available riders." },
-    { question: "Why cache restaurant menus separately from live rider locations?", hint: "They have very different update frequencies and access patterns — menus change rarely and are read constantly, while rider locations change constantly and are read by nearby matching logic." },
+    { question: "Why cache restaurant menus separately from live rider locations?", hint: "They have very different update frequencies and access patterns - menus change rarely and are read constantly, while rider locations change constantly and are read by nearby matching logic." },
   ],
   whatIf: [
     { question: "What happens if one dispatch server fails mid-shift?", affectedComponent: "Dispatch Servers", consequence: "In-flight matching on that server is disrupted, but the load balancer routes new requests to healthy servers, and orders already recorded in the database aren't lost." },

@@ -82,3 +82,35 @@ body {
 .cm-editor.cm-focused {
   outline: none !important;
 }
+
+/* View transitions between pages */
+:root {
+  --duration-exit: 150ms;
+  --duration-enter: 220ms;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::view-transition-old(.page-fade-out) {
+  animation: var(--duration-exit) ease-in page-fade reverse both;
+}
+
+::view-transition-new(.page-fade-in) {
+  animation: var(--duration-enter) ease-out var(--duration-exit) page-fade both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

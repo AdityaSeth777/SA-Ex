@@ -2,10 +2,10 @@ import { LiveChallenge } from "@/lib/types";
 
 export const chatApplicationScaleChallenge: LiveChallenge = {
   slug: "chat-application-1m-users",
-  title: "Chat Application — 1 Million Users",
+  title: "Chat Application - 1 Million Users",
   expectedLearning: "Scaling decisions under massive concurrency",
   scenario:
-    "Same requirements as the earlier Chat Application challenge — 1-to-1 messaging, group messaging, online status, message history — but now roughly 1 million users are connected at the same time.",
+    "Same requirements as the earlier Chat Application challenge - 1-to-1 messaging, group messaging, online status, message history - but now roughly 1 million users are connected at the same time.",
   requirements: [
     "1-to-1 messaging",
     "Group messaging",
@@ -39,12 +39,12 @@ export const chatApplicationScaleChallenge: LiveChallenge = {
       { step: 3, title: "Store", description: "A worker writes it into the correct database shard." },
     ],
     whyEachExists: [
-      "Every new component here solves a specific bottleneck that appears only once you cross from thousands to millions of users — none of them are needed at the smaller scale.",
-      "This is exactly the same underlying problem as the smaller chat app — the requirements haven't changed, only the scale has.",
+      "Every new component here solves a specific bottleneck that appears only once you cross from thousands to millions of users - none of them are needed at the smaller scale.",
+      "This is exactly the same underlying problem as the smaller chat app - the requirements haven't changed, only the scale has.",
     ],
     alternatives: [
-      "There are many valid ways to shard the database (by user, by channel, by region) — the right choice depends on how data is typically accessed.",
-      "Some designs might use a pub/sub system instead of a queue for live delivery between servers — both are reasonable depending on trade-offs discussed in class.",
+      "There are many valid ways to shard the database (by user, by channel, by region) - the right choice depends on how data is typically accessed.",
+      "Some designs might use a pub/sub system instead of a queue for live delivery between servers - both are reasonable depending on trade-offs discussed in class.",
     ],
   },
   sourcePath: "content/05-live-challenges/chat-application-scale.ts",
