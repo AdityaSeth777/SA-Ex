@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --surface: #f6f7f9;
+  --surface-hover: #eceef1;
+  --border: #e2e4e9;
+  --foreground: #14161a;
+  --muted-foreground: #5b6069;
+  --accent: #3b6df0;
+  --accent-foreground: #ffffff;
+  --code-bg: #f6f7f9;
+  --diagram-bg: #ffffff;
+}
+
+.dark {
+  --background: #0b0d12;
+  --surface: #13161c;
+  --surface-hover: #1b1f27;
+  --border: #232830;
+  --foreground: #e8eaed;
+  --muted-foreground: #8b929e;
+  --accent: #5b8cff;
+  --accent-foreground: #0b0d12;
+  --code-bg: #10131a;
+  --diagram-bg: #10131a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram-highlight rect,
+.diagram-highlight polygon,
+.diagram-highlight circle,
+.diagram-highlight path.basic {
+  stroke: var(--accent) !important;
+  stroke-width: 3px !important;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 55%, transparent));
+}
+
+.cm-editor {
+  height: 100%;
+  font-size: 13px;
+}
+
+.cm-editor.cm-focused {
+  outline: none !important;
+}
