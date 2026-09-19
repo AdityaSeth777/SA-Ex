@@ -3,7 +3,7 @@ import { githubRepoUrl } from "@/lib/github";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border">
-      <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-muted-foreground sm:px-6">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground sm:px-6">
         <p>
           Software Architecture Foundations - a study companion, not an LMS.
           Content lives in the{" "}
@@ -17,6 +17,14 @@ export function Footer() {
           </a>
           .
         </p>
+        <a
+          href="https://adityaseth.in/linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] text-muted-foreground/60 hover:text-accent hover:underline"
+        >
+          Made by A
+        </a>
       </div>
     </footer>
   );

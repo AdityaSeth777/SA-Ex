@@ -16,10 +16,44 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_NAME = "Software Architecture Foundations";
+const SITE_DESCRIPTION =
+  "Learn how software systems are structured, how components communicate, and how architectures evolve as systems scale.";
+
 export const metadata: Metadata = {
-  title: "Software Architecture Foundations",
-  description:
-    "Learn how software systems are structured, how components communicate, and how architectures evolve as systems scale.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: {
+    default: SITE_NAME,
+    template: `%s · ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "software architecture",
+    "system design",
+    "architecture diagrams",
+    "computer science education",
+    "case studies",
+    "mermaid diagrams",
+    "load balancer",
+    "caching",
+    "message queue",
+  ],
+  authors: [{ name: "Aditya Seth", url: "https://adityaseth.in/linkedin" }],
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -31,16 +65,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-background text-foreground font-sans">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <Navbar />
-          <main className="flex-1">
-            <ViewTransition
-              enter="page-fade-in"
-              exit="page-fade-out"
-              default="none"
-            >
-              {children}
-            </ViewTransition>
-          </main>
+          <ViewTransition
+            enter="page-fade-in"
+            exit="page-fade-out"
+            default="none"
+          >
+            <Navbar />
+            <main className="flex-1">{children}</main>
+          </ViewTransition>
           <Footer />
         </ThemeProvider>
       </body>

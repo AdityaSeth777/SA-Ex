@@ -9,6 +9,7 @@ import {
   Boxes,
 } from "lucide-react";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const routes = [
   {
@@ -51,9 +52,12 @@ const routes = [
 export default function Home() {
   return (
     <div>
-      <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 pt-6 text-sm font-semibold text-foreground sm:px-6">
-        <Boxes size={18} className="text-accent" />
-        Software Architecture Foundations
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 pt-6 sm:px-6">
+        <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+          <Boxes size={18} className="text-accent" />
+          Software Architecture Foundations
+        </div>
+        <ThemeToggle />
       </div>
 
       <section className="mx-auto max-w-5xl px-4 pt-10 pb-12 text-center sm:px-6 sm:pt-16">
