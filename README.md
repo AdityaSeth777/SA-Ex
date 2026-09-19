@@ -45,6 +45,98 @@ content/
 Each case study/challenge/evolution file carries a `sourcePath` used to
 generate its "View source on GitHub" link.
 
+## Architecture
+
+### System architecture
+
+How the app itself is put together: static/SSG Next.js pages read
+structured content at build time, the browser renders Mermaid diagrams
+and the Playground editor client-side, and each piece of content links
+back to its source file in this GitHub repo.
+
+```mermaid
+flowchart LR
+  subgraph Browser["Browser"]
+    UI["React UI Components"]
+    MermaidJS["mermaid.js renderer"]
+    CM["CodeMirror editor (Playground)"]
+    Theme["next-themes (dark/light)"]
+  end
+
+  UI --> MermaidJS
+  UI --> CM
+  UI --> Theme
+
+  subgraph NextApp["Next.js App Router"]
+    Pages["Pages & Layouts<br/>(Home, Learn, Case Studies, Evolution,<br/>Challenges, Playground)"]
+    OG["opengraph-image route<br/>(next/og)"]
+  end
+
+  UI <--> Pages
+  Pages --> OG
+
+  subgraph ContentLayer["Content Layer"]
+    Data["content/*.ts<br/>(case studies, challenges,<br/>evolution, glossary)"]
+  end
+
+  Pages --> Data
+  Data -.->|"sourcePath → View source"| GitHub[("GitHub repo<br/>AdityaSeth777/SA-Ex")]
+```
+
+### Sequence diagram: studying a case study
+
+A typical flow: a student opens a case study, traces the request flow
+step by step, then jumps into the Playground with that diagram
+pre-loaded to experiment with it.
+
+```mermaid
+sequenceDiagram
+  participant S as Student
+  participant B as Browser (Client)
+  participant Srv as Next.js (SSG page)
+  participant C as content/*.ts
+  participant M as mermaid.js
+
+  S->>B: Click "URL Shortener" case study
+  B->>Srv: Request /case-studies/url-shortener
+  Srv->>C: Read case study data
+  C-->>Srv: CaseStudy object (scenario, flow, diagram)
+  Srv-->>B: Pre-rendered HTML
+  B->>M: Render Mermaid diagram (client-side)
+  M-->>B: SVG diagram
+  S->>B: Click "Next Step" (Request Flow)
+  B-->>S: Highlight current step
+  S->>B: Click "Open in Playground"
+  B->>Srv: Navigate to /playground?code=...
+  Srv-->>B: Playground page, code pre-filled
+  B->>M: Re-render diagram on every edit
+```
+
+### User flow diagram
+
+How a student (or instructor) moves through the app, following the
+Study → Understand → Trace → Modify → Design progression.
+
+```mermaid
+flowchart TD
+  Home["Home"] --> Learn["Learn:<br/>How to Read an Architecture"]
+  Learn --> CaseStudies["Case Studies"]
+
+  CaseStudies --> Basic["Level 1 - Basic"]
+  CaseStudies --> Intermediate["Level 2 - Intermediate"]
+  CaseStudies --> Scale["Level 3 - Scale"]
+
+  CaseStudies --> Evolution["Architecture Evolution"]
+  Evolution --> Challenges["Live Challenges"]
+
+  Challenges -->|design live| Canvas["Blank Mermaid Canvas"]
+  Challenges -->|instructor reveals| Reference["Reference Architecture"]
+
+  Home --> Playground["Architecture Playground"]
+  Canvas --> Playground
+  Playground -->|iterate on a design| Challenges
+```
+
 ## Getting started
 
 ```bash
