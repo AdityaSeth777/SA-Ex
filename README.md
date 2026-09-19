@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Software Architecture Foundations
 
-## Getting Started
+A study companion for first-year undergraduates learning software
+architecture — not a submission platform or LMS. It helps students study
+architecture diagrams before class, and gives instructors ready-to-open
+live classroom design challenges.
 
-First, run the development server:
+**Learning progression:** Study → Understand → Trace → Modify → Design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What's here
+
+- **Learn** (`/learn`) — the core building blocks (Client, Frontend,
+  Backend, API, Database, Cache, Load Balancer, Message Queue, Object
+  Storage, CDN, Authentication), each with a plain-language explanation
+  and an interactive diagram.
+- **Case Studies** (`/case-studies`) — 13 systems across three levels
+  (Basic, Intermediate, Scale), each with a scenario, requirements, a
+  Mermaid diagram, component explanations, a step-by-step request flow,
+  "Think About It" discussion questions, and "What Happens If...?"
+  failure/scaling scenarios.
+- **Architecture Evolution** (`/evolution`) — three systems (Chat, Video
+  Streaming, Food Delivery) shown at three points of scale, illustrating
+  how requirements at scale force architectural change.
+- **Live Challenges** (`/challenges`) — 8 classroom-ready design
+  problems with a blank Mermaid canvas and a hidden reference
+  architecture instructors can reveal after discussion.
+- **Architecture Playground** (`/playground`) — a live Mermaid editor
+  with a starter cheat sheet.
+
+## Content structure
+
+Educational content lives under `content/`, mirroring a study-repo layout:
+
+```
+content/
+  01-basics/
+  02-intermediate/
+  03-scale/
+  04-architecture-evolution/
+  05-live-challenges/
+  mermaid-examples.ts
+  components-glossary.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Each case study/challenge/evolution file carries a `sourcePath` used to
+generate its "View source on GitHub" link.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js (App Router) + TypeScript + Tailwind CSS, `mermaid` for diagram
+rendering, `@uiw/react-codemirror` for the playground editor, and
+`next-themes` for dark/light mode.
